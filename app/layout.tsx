@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import ClientLayout from "./components/ClientLayout";
 import "./globals.css";
+import SendToWebhook from "./components/Analytics/SendToWebhook";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body
         className={`${poppins.className} bg-black min-h-screen flex flex-col`}
       >
+        <SendToWebhook showFeedback={false} debugMode={false} />
         <ClientLayout>
           <Header />
           <main className="flex-grow">{children}</main>
