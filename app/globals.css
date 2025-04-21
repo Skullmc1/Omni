@@ -3,25 +3,212 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    --background-rgb: 0, 0, 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-rgb));
+}
+
+/* Add smooth scrolling to the page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhance the frosted glass effect */
+.backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes moveStripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-move-stripes {
+    animation: moveStripes 2s linear infinite;
+}
+
+.bg-stripes {
+    background-size: 20px 20px;
+}
+@keyframes dnaSpinner {
+    0%,
+    100% {
+        transform: rotate(0deg) translate(8px, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(180deg) translate(8px, 0) scale(0.5);
+        opacity: 0.5;
+    }
+}
+
+@keyframes pulseSpinner {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes dna1 {
+    0% {
+        transform: translateX(-12px) translateY(0) scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(0) translateY(4px) scale(0.8);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(12px) translateY(0) scale(1);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(0) translateY(-4px) scale(0.8);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(-12px) translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes dna2 {
+    0% {
+        transform: translateX(12px) translateY(0) scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(0) translateY(-4px) scale(0.8);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(-12px) translateY(0) scale(1);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(0) translateY(4px) scale(0.8);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(12px) translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-dna1 {
+    animation: dna1 2s infinite ease-in-out;
+}
+
+.animate-dna2 {
+    animation: dna2 2s infinite ease-in-out;
+}
+
+@keyframes vortex {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(16px) scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes matrix {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    25% {
+        opacity: 0.5;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes atom-1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes atom-2 {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(450deg);
+    }
+}
+
+.animate-vortex {
+    animation: vortex 1.5s infinite ease-in-out;
+}
+
+.animate-circuit {
+    animation: circuit 2s infinite linear;
+}
+
+.animate-ripple {
+    animation: ripple 1.5s infinite ease-out;
+}
+
+.animate-matrix {
+    animation: matrix 2s infinite;
+}
+
+.animate-atom-1 {
+    animation: atom-1 3s infinite linear;
+}
+
+.animate-atom-2 {
+    animation: atom-2 3s infinite linear;
+}
+
+.animate-spin-slow {
+    animation: spin 3s linear infinite;
 }
