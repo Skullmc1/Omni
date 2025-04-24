@@ -1,3 +1,5 @@
+## I noticed that this site is not even remotely responsive to mobile phones.
+
 # 🧪 Component Playground
 
 A sandbox repo for testing out random components I find interesting.  
